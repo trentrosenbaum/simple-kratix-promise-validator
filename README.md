@@ -1,3 +1,5 @@
+[![Py Checks - Simple Kratix Promise Validator](https://github.com/trentrosenbaum/simple-kratix-promise-validator/actions/workflows/pychecks.yaml/badge.svg)](https://github.com/hey-savi-organisation/whatsapp-message-processor/actions/workflows/deploy_dev.yaml)
+
 # Simple Kratix Promise Validator
 
 This repo represents a simple Kratix promise validator. When supplied with a Kratix promise.yaml file, (containing an 
