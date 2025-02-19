@@ -4,8 +4,9 @@ This module validates a resource YAML file against a schema defined in a Promise
 import json
 import sys
 import yaml
-from jsonschema import validate, ValidationError
+from jsonschema import Draft7Validator, ValidationError
 
+# pylint: disable=W0718
 def load_yaml(file_path):
     """Load a YAML file and return its contents as a dictionary."""
     try:
@@ -46,7 +47,8 @@ def validate_resource(promise_file, resource_file):
         print("Resource Data:\n", json.dumps(resource_data, indent=2))
 
         # Validate the entire resource object, not just spec
-        validate(instance=resource_data, schema=schema)
+        validator = Draft7Validator(schema)  # Create a validator instance
+        validator.validate(instance=resource_data)  # Use the validator's validate method
 
         print("✅ Validation successful: The resource is valid according to the Promise schema.")
     except ValidationError as e:
