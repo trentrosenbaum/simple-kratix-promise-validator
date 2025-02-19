@@ -1,12 +1,31 @@
-import yaml
+"""
+This module validates a resource YAML file against a schema defined in a Promise YAML file.
+"""
 import json
 import sys
+import yaml
 from jsonschema import validate, ValidationError
 
 def load_yaml(file_path):
     """Load a YAML file and return its contents as a dictionary."""
-    with open(file_path, "r") as f:
-        return yaml.safe_load(f)
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            return yaml.safe_load(f)
+    except FileNotFoundError:
+        print(f"Error: File not found: {file_path}")
+        sys.exit(1)
+    except yaml.YAMLError as e:
+        print(f"YAML Parsing Error: {e}")
+        sys.exit(1)
+    except OSError as e:
+        print(f"OS Error: {e}")
+        sys.exit(1)
+    except json.JSONDecodeError as e:
+        print(f"JSON Decode Error: {e}")
+        sys.exit(1)
+    except Exception as e:  # Only catch general exception in validate to display remaining errors.
+        print(f"Unexpected Error in load_yaml: {e}")
+        sys.exit(1)
 
 def validate_resource(promise_file, resource_file):
     """Validate the resource YAML against the schema in the Promise YAML."""
