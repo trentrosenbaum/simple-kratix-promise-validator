@@ -1,0 +1,22 @@
+[project]
+name = "simple-kratix-promise-validator"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.12"
+dependencies = [
+    "attrs==25.1.0",
+    "jsonschema==4.23.0",
+    "jsonschema-specifications==2024.10.1",
+    "pyyaml==6.0.2",
+    "referencing==0.36.2",
+    "rpds-py==0.22.3",
+    "typing-extensions==4.12.2",
+]
+
+[dependency-groups]
+dev = [
+    "assertpy==1.1",
+    "pylint==3.3.4",
+    "pytest==8.3.4",
+    "pytest-cov==6.0.0",
+]
