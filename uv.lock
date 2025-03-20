@@ -307,7 +307,6 @@ dependencies = [
     { name = "jsonschema-specifications" },
     { name = "pyyaml" },
     { name = "referencing" },
-    { name = "rpds-py" },
     { name = "typing-extensions" },
 ]
 
@@ -326,7 +325,6 @@ requires-dist = [
     { name = "jsonschema-specifications", specifier = "==2024.10.1" },
     { name = "pyyaml", specifier = "==6.0.2" },
     { name = "referencing", specifier = "==0.36.2" },
-    { name = "rpds-py", specifier = "==0.22.3" },
     { name = "typing-extensions", specifier = "==4.12.2" },
 ]
 
