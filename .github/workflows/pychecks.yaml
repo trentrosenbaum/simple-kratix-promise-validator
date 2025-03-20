@@ -26,7 +26,7 @@ jobs:
     - name: Run Tests
       run: |
         if [ -d tests ]; then
-          uv pytest --cov=validate --cov-report=term
+          uv run pytest --cov=validate --cov-report=term
         else
           echo "No tests found"
         fi
@@ -52,4 +52,4 @@ jobs:
 
       - name: Run Linting
         run: |
-          uv pylint $(git ls-files '*.py') --fail-under=8.0 --recursive=y --enable=W
+          uv run pylint $(git ls-files '*.py') --fail-under=8.0 --recursive=y --enable=W
