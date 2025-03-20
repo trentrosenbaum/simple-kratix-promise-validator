@@ -15,13 +15,16 @@ in the contract.
 
 ## Setup
 
+### Prerequisite
+
+This repo is built using [uv](https://github.com/astral-sh/uv) and the GitHub actions make use of [setup-uv](https://github.com/astral-sh/setup-uv) 
+
+The repo can be opened within PyCharm using the uv integration.  The following YouTube video provides a quickstart to the 
+integration - [How to Use uv in PyCharm](https://youtu.be/XBlTunKsXJA?si=dX1wmyDqXWYTCVw6).
+
 ```shell
 python -m venv venv
 source venv/bin/activate
-
-pip install --upgrade pip
-pip install -r requirements-dev.txt
-pip install -r requirements.txt
 ```
 
 ## Execution
